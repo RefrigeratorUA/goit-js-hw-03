@@ -1,14 +1,17 @@
-function mapArray(array) {
-  const numbers = new Array(array.length);
-  for (let i = 0; i < array.length; i += 1) {
-    // Write code under this line
-    numbers[i] = array[i] * 10;
-  }
-  return numbers;
-}
+const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 2 },
+];
 
-console.log(mapArray([-2, 0, 2]));
-// [-20, 0, 20]
+const calculateTotalPrice = function (allProdcuts, productName) {
+  // твой код
+};
 
-console.log(mapArray([-2.5, 0, 2.5]));
-// [-25, 0, 25]
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(calculateTotalPrice(products, 'Радар')); // 5200
+
+console.log(calculateTotalPrice(products, 'Дроид')); // 2800
