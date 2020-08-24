@@ -7,6 +7,11 @@ const products = [
 
 const calculateTotalPrice = function (allProdcuts, productName) {
   // твой код
+  for (const product of allProdcuts) {
+    if (product.name === productName) {
+      return product.price * product.quantity;
+    }
+  }
 };
 
 /*
@@ -15,3 +20,5 @@ const calculateTotalPrice = function (allProdcuts, productName) {
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
 
 console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+
+// console.log(calculateTotalPrice(products, 'Захват')); // 2400
