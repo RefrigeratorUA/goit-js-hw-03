@@ -1,21 +1,55 @@
+// const user = {
+//   name: 'Mango',
+//   age: 20,
+//   hobby: 'html',
+//   premium: true,
+// };
+
+// console.log(user);
+
+// user.mood = 'happy';
+// console.log(user);
+
+// user.hobby = 'skydiving';
+// console.log(user);
+
+// user.premium = false;
+// console.log(user);
+
+// for (const key of Object.keys(user)) {
+//   console.log(`${key}:${user[key]}`);
+// }
+
+let message = '';
+
 const user = {
-  name: 'Mango',
   age: 20,
   hobby: 'html',
+  name: 'Mango',
   premium: true,
 };
 
-console.log(user);
-
+//Write code under this line
 user.mood = 'happy';
-console.log(user);
+
+user['full time'] = true;
 
 user.hobby = 'skydiving';
-console.log(user);
 
 user.premium = false;
-console.log(user);
 
-for (const key of Object.keys(user)) {
-  console.log(`${key}:${user[key]}`);
+const keys = Object.keys(user);
+// Write code under this line
+for (const key of keys) {
+  message += `${key}:${user[key]}\n`;
 }
+
+console.log(message);
+/*
+'age : 20
+hobby : skydiving
+name : Mango
+premium : false
+mood : happy
+"full time" : true
+' */

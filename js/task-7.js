@@ -29,7 +29,7 @@ const account = {
     transaction.amount = amount;
     this.transactions.push(transaction);
     //
-    console.log(this.transactions);
+    // console.log(this.transactions);
   },
 
   /*
@@ -66,22 +66,38 @@ const account = {
    * Метод возвращает текущий баланс
    */
   getBalance() {
-    return this.balance;
+    return `Баланс: ${this.balance}`;
   },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    for (const item of this.transactions) {
+      if (item.id === id) return item;
+    }
+    return `Нет транзакции с id=${id}`;
+  },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {},
+  getTransactionTotal(type) {
+    let total = 0;
+    for (const item of this.transactions) {
+      if (item.type === type) {
+        total += item.amount;
+      }
+    }
+    return `Транзакций ${type} на сумму ${total}`;
+  },
 };
 
 console.log(account.deposit(50));
 console.log(account.withdraw(22));
 console.log(account.getBalance());
 console.log(account.withdraw(7));
+console.log(account.getTransactionDetails(2));
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+console.log(account.getTransactionTotal(Transaction.WITHDRAW));
