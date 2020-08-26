@@ -41,18 +41,32 @@
 //   }),
 // ); // lux
 
-const findBestEmployee = function (employees) {
-  // Write code under this line
-  let maxValue = 0;
-  let best = 'Все бездари! Разогнать!!!';
+// const findBestEmployee = function (employees) {
+//   // Write code under this line
+//   let maxValue = 0;
+//   let best = '';
 
-  for (const key of Object.keys(employees)) {
-    if (employees[key] > maxValue) {
-      maxValue = employees[key];
-      best = key;
+//   for (const key of Object.keys(employees)) {
+//     if (employees[key] > maxValue) {
+//       maxValue = employees[key];
+//       best = key;
+//     }
+//   }
+//   return best;
+// };
+
+const findBestEmployee = function (employees) {
+  const entries = Object.entries(employees);
+  let result = '';
+  let maxValue = 0;
+
+  for (const [name, value] of entries) {
+    if (value > maxValue) {
+      maxValue = value;
+      result = name;
     }
   }
-  return best;
+  return result;
 };
 
 // Объекты и ожидаемый результат

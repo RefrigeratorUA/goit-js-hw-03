@@ -29,7 +29,7 @@ const account = {
     transaction.amount = amount;
     this.transactions.push(transaction);
     //
-    // console.log(this.transactions);
+    // console.table(this.transactions);
   },
 
   /*
